@@ -9,7 +9,6 @@ import { fetchInstruments } from '../actions/fetchInstruments'
 class InstrumentsContainer extends React.Component{
 
   componentDidMount(){
-    // fetchInstruments()
     this.props.fetchInstruments()
   }
 
@@ -17,13 +16,15 @@ class InstrumentsContainer extends React.Component{
     // debugger
     return(
       <>
-        {/* <Switch> */}
-        <Route path='/instruments' render={(routerProps) => 
-
-          // <Route path='/instruments/:id' render={(routerProps) => 
-              <Instrument {...routerProps} instruments={this.props.instruments}/>
+        <Switch>
+        <Route exact path='/instruments' render={(routerProps) => 
+              <Instrument {...routerProps} instruments={this.props.instruments} />}/>
+         
+          <Route exact path='/instruments/:id' render={(routerProps) => 
+              <Instrument {...routerProps} instruments={this.props.instruments} />}/>
+           
           }/>
-        {/* </Switch> */}
+       </Switch> 
       </>
     )
   }
