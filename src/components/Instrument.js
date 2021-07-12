@@ -2,12 +2,13 @@ import React from 'react'
 
 const Instrument = props =>{
   // debugger
-  let instrument = props.instruments[props.match.params.id]
-  
+  let instrument = props.instruments[0]
+  // let instrument = match.props etc...
+
   return(
     <div>
 
-    <div>Description: {instrument ? instrument.price : null}</div>
+    <div>Price: {instrument ? Math.floor(instrument.price) : null}</div>
 
   </div>
   )

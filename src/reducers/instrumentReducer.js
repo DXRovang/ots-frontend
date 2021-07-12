@@ -1,7 +1,10 @@
-export default function instrumentReducer(state = [], action){
+
+export default function instrumentReducer(state = {instruments: []}, action){
+// debugger
   switch(action.type){
+      // case "@@INIT":
     case "FETCH_INSTRUMENTS":
-      return action.payload
+      return {instruments: action.payload}
     default:
         return state
   }
