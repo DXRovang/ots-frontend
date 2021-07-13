@@ -9,10 +9,9 @@ import App from './App';
 
 import './index.css';
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(instrumentReducer, composeEnhancers(applyMiddleware(thunk)))
-// debugger
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -21,7 +20,7 @@ ReactDOM.render(
       </Router>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+document.getElementById('root')
 );
 
 
