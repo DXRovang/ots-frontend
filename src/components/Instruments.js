@@ -1,9 +1,10 @@
-import React
-// ,{ useState } 
-from 'react'
+import React from 'react'
+// import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 
 const Instruments = props =>{
+
+  // https://stackoverflow.com/questions/56419688/filtering-data-with-buttons-in-react
 
     // let instruments = props.instruments
 
