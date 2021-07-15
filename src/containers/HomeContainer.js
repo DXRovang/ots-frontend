@@ -28,7 +28,8 @@ class HomeContainer extends React.Component{
           <CardTitle tag="h5">Mandolins</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">Shazam</CardSubtitle>
           <CardText>Super cool factoid about mandos</CardText>
-          <Link to="/mandolins"><Button>Search</Button></Link>
+          <Link to="/mandolins"><Button>Search</Button></Link><br></br><br></br>
+          <Link to="/mandolins"><Button>Add</Button></Link>
         </CardBody>
       </Card>
       <Card>
@@ -37,7 +38,8 @@ class HomeContainer extends React.Component{
           <CardTitle tag="h5">Guitars</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">Crack</CardSubtitle>
           <CardText>Super cool factoid about guitars</CardText>
-          <Link to="/guitars"><Button>Search</Button></Link>
+          <Link to="/guitars"><Button>Search</Button></Link><br></br><br></br>
+          <Link to="/guitars"><Button>Add</Button></Link>
         </CardBody>
       </Card>
       <Card>
@@ -46,7 +48,8 @@ class HomeContainer extends React.Component{
           <CardTitle tag="h5">Banjos</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">Pow</CardSubtitle>
           <CardText>Super cool factoid about banjos</CardText>
-          <Link to="/banjos"><Button>Search</Button></Link>
+          <Link to="/banjos"><Button>Search</Button></Link><br></br><br></br>
+          <Link to="/banjos"><Button>Add</Button></Link>
         </CardBody>
       </Card>
     </CardGroup>

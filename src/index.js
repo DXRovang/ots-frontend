@@ -6,9 +6,9 @@ import { Provider } from 'react-redux'
 import instrumentReducer from './reducers/instrumentReducer'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
-
+// import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './styles.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(instrumentReducer, composeEnhancers(applyMiddleware(thunk)))
