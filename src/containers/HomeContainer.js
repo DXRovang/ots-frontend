@@ -5,11 +5,6 @@ import { connect } from 'react-redux'
 import mando from "../assets/mando.jpeg"
 import guitar from "../assets/guitar.jpg"
 import banjo from "../assets/banjo.JPG"
-// import Instrument from '../components/Instrument'
-// import Instruments from '../components/Instruments'
-// import Mandolins from '../components/Mandolins'
-// import Guitars from '../components/Guitars'
-// import Banjos from '../components/Banjos'
 import { fetchInstruments } from '../actions/fetchInstruments'
 import {
   Card, Button, CardImg, CardTitle, CardText, CardGroup,
@@ -31,8 +26,8 @@ class HomeContainer extends React.Component{
         <CardImg top width="100%" src={mando} alt="Mando Pic" />
         <CardBody>
           <CardTitle tag="h5">Mandolins</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">Shazam</CardSubtitle>
+          <CardText>Super cool factoid about mandos</CardText>
           <Link to="/mandolins"><Button>Search</Button></Link>
         </CardBody>
       </Card>
@@ -40,8 +35,8 @@ class HomeContainer extends React.Component{
         <CardImg top width="100%" src={guitar} alt="Card image cap" />
         <CardBody>
           <CardTitle tag="h5">Guitars</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">Crack</CardSubtitle>
+          <CardText>Super cool factoid about guitars</CardText>
           <Link to="/guitars"><Button>Search</Button></Link>
         </CardBody>
       </Card>
@@ -49,8 +44,8 @@ class HomeContainer extends React.Component{
         <CardImg top width="100%" src={banjo} alt="Card image cap" />
         <CardBody>
           <CardTitle tag="h5">Banjos</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">Pow</CardSubtitle>
+          <CardText>Super cool factoid about banjos</CardText>
           <Link to="/banjos"><Button>Search</Button></Link>
         </CardBody>
       </Card>
