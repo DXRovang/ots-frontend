@@ -1,7 +1,19 @@
-.navigate{
-  background-color: lightcoral;
-}
+
 
 .title{
+  color: rgb(238, 207, 139);
+  background-color: rgb(172, 77, 81);
   text-align: center;
+}
+.single{
+  text-align: center;
+  margin: 20vh;
+  background-color: rgb(245, 195, 120);
+}
+.App{
+  background-color: rgb(45, 32, 32);
+}
+.font{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
 }

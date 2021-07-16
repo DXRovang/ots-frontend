@@ -21,7 +21,7 @@ let instruments = this.props.instruments.filter(instrument => instrument.family.
     <h3 className="title">Guitars</h3>
     <CardGroup>
       {instruments ? instruments.map(instrument => 
-        <Card body inverse color="warning">
+        <Card body inverse style={{ backgroundColor: '#646', borderColor: '#333' }}>
           <CardBody>
             <div key={instrument.id}>
               <CardText>

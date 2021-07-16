@@ -8,9 +8,10 @@ const Navig = (props) => {
 
   return (
     <div>
-      <Navbar className="navigate" color="info" light>
-      {/* style={{backgroundColor: 'orange'}} */}
-        <NavbarBrand href="/home" className="mr-auto">Old Time Strings</NavbarBrand>
+      {/* <Navbar color="info" dark> */}
+      <Navbar body inverse style={{ backgroundColor: '#646', borderColor: '#333' }} dark>
+
+        <NavbarBrand href="/home" className="mr-auto font">Old Time Strings</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
