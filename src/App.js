@@ -1,26 +1,48 @@
 
 import React from 'react';
-import {Route} from 'react-router-dom'
-// import InstrumentsContainer from './containers/InstrumentsContainer'
+import {Route, Switch} from 'react-router-dom'
+import { connect } from 'react-redux'
 import HomeContainer from './containers/HomeContainer'
 import Mandolins from './components/Mandolins'
 import Guitars from './components/Guitars'
 import Banjos from './components/Banjos'
+import Instrument from './components/Instrument'
+import { fetchInstruments } from './actions/fetchInstruments'
 import Navbar from './Navbar'
 
 
-function App() {
+class App extends React.Component {
+
+  componentDidMount(){
+    this.props.fetchInstruments()
+  }
+
+  render(){
   return (
     <div className="App">
       <Navbar />
-      {/* <InstrumentsContainer /> */}
-      <Route exact path='/home'><HomeContainer /></Route>
-      <Route exact path='/mandolins'><Mandolins /></Route>
-      <Route exact path='/guitars'><Guitars /></Route>
-      <Route exact path='/banjos'><Banjos /></Route>
+      <Switch>
+          <Route exact path='/home' render={(routerProps) => 
+            <HomeContainer {...routerProps} instruments={this.props.instruments} />}/>
+          <Route exact path='/mandolins' render={(routerProps) => 
+            <Mandolins {...routerProps} instruments={this.props.instruments} />}/>
+          <Route exact path='/guitars' render={(routerProps) => 
+            <Guitars {...routerProps} instruments={this.props.instruments} />}/>
+          <Route exact path='/banjos' render={(routerProps) => 
+            <Banjos {...routerProps} instruments={this.props.instruments} />}/>
+          <Route exact path='/instruments/:id' render={(routerProps) => 
+            <Instrument {...routerProps} instruments={this.props.instruments} />}/>
+          }/>
+        </Switch> 
     </div>
-  );
+    );
+  }
+}
+const mapStateToProps = (state) =>{
+  return {
+    instruments: state.instruments
+  }
 }
 
-export default App;
+export default connect(mapStateToProps, {fetchInstruments})(App)
 

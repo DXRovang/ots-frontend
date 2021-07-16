@@ -17,6 +17,7 @@ class InstrumentsContainer extends React.Component{
   }
 
   render(){
+    debugger
     return(
       <>
         <Switch>

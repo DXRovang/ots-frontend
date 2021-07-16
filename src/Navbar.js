@@ -8,7 +8,7 @@ const Navig = (props) => {
 
   return (
     <div>
-      <Navbar className="navigate" color="light" light>
+      <Navbar className="navigate" color="info" light>
       {/* style={{backgroundColor: 'orange'}} */}
         <NavbarBrand href="/home" className="mr-auto">Old Time Strings</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />

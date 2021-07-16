@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Instrument = props =>{
-
+// debugger
   let instrument = props.instruments[props.match.params.id - 1]
 
   return(
