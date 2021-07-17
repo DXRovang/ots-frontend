@@ -12,8 +12,13 @@
 }
 .App{
   background-color: rgb(45, 32, 32);
+  height: 100vh;
 }
 .font{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 40px;
+}
+.form{
+  height: 80vh;
+  margin: 5vh;
 }

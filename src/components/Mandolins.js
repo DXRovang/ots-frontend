@@ -13,6 +13,11 @@ class Mandolins extends React.Component{
     this.props.fetchInstruments()
   }
 
+  goBack(){
+    this.props.history.goBack()
+  }
+ 
+
   render(){
   let instruments = this.props.instruments.filter(instrument => instrument.family.name === "Mandolin")
 
@@ -35,6 +40,7 @@ class Mandolins extends React.Component{
         </Card>       
       ) : null }
     </CardGroup>
+    <Button onClick={() => this.goBack()}>Back</Button>
     </>
     ) 
   }

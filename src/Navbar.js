@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Navig = (props) => {
   const [collapsed, setCollapsed] = useState(true);
-
+// debugger
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  // function goBack(){
+  //   props.history.goBack()
+  // }
 
   return (
     <div>
-      {/* <Navbar color="info" dark> */}
+      
       <Navbar body inverse style={{ backgroundColor: '#646', borderColor: '#333' }} dark>
+      {/* <Button onClick={() => goBack()}><NavbarBrand className="mr-auto font">Old Time Strings</NavbarBrand></Button> */}
 
         <NavbarBrand href="/home" className="mr-auto font">Old Time Strings</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
