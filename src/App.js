@@ -7,6 +7,7 @@ import Mandolins from './components/Mandolins'
 import Guitars from './components/Guitars'
 import Banjos from './components/Banjos'
 import Instrument from './components/Instrument'
+import About from './components/About'
 import InstrumentForm from './components/InstrumentForm'
 import { fetchInstruments } from './actions/fetchInstruments'
 import Navbar from './Navbar'
@@ -25,6 +26,8 @@ class App extends React.Component {
       <Switch>
       <Route exact path='/instruments/new' render={(routerProps) => 
             <InstrumentForm {...routerProps} instruments={this.props.instruments} />}/>
+          <Route exact path='/about' render={(routerProps) => 
+            <About {...routerProps} instruments={this.props.instruments} />}/>
           <Route exact path='/home' render={(routerProps) => 
             <HomeContainer {...routerProps} instruments={this.props.instruments} />}/>
           <Route exact path='/mandolins' render={(routerProps) => 

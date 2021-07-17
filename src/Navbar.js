@@ -24,6 +24,9 @@ const Navig = (props) => {
               <NavLink href="/home">Home</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/about">About</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
             </NavItem>
           </Nav>
