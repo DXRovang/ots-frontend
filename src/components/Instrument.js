@@ -33,7 +33,7 @@ const Instrument = props =>{
           Back:   {instrument.back ? instrument.back : "n/a" }<br></br>
           SoundHole:    {instrument.hole ? instrument.hole : "n/a" }<br></br>
           Frets:    {instrument.frets ? instrument.frets : "n/a" }<br></br>
-          Description:    {instrument.description ? instrument.description : null }<br></br>
+          Description:    {instrument.description ? instrument.description : "n/a" }<br></br>
           Price:  ${instrument ? Math.floor(instrument.price) : null}<br></br>
           Owner:  {instrument.user.username}<br></br>
           </> : null}

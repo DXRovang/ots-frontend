@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+// import FamiliesContainer from '../containers/FamiliesContainer'
 import { fetchInstruments } from '../actions/fetchInstruments'
 import {
   Card, Button, CardImg, CardTitle, CardText, CardGroup,
@@ -24,6 +25,7 @@ class Mandolins extends React.Component{
   return(
     <>
     <h3 className="title">Mandolins</h3>
+    {/* <FamiliesContainer /> */}
     <CardGroup>
       {instruments ? instruments.map(instrument => 
         <Card body inverse style={{ backgroundColor: '#656', borderColor: '#333' }}>
@@ -40,7 +42,7 @@ class Mandolins extends React.Component{
         </Card>       
       ) : null }
     </CardGroup>
-    <Button onClick={() => this.goBack()}>Back</Button>
+    <Button className="indent2" onClick={() => this.goBack()}>Back</Button>
     </>
     ) 
   }

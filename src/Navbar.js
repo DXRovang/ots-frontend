@@ -16,18 +16,24 @@ const Navig = (props) => {
       <Navbar body inverse style={{ backgroundColor: '#646', borderColor: '#333' }} dark>
       {/* <Button onClick={() => goBack()}><NavbarBrand className="mr-auto font">Old Time Strings</NavbarBrand></Button> */}
 
-        <NavbarBrand href="/home" className="mr-auto font">Old Time Strings</NavbarBrand>
+        <NavbarBrand href="/home" className="mr-auto font indent">Old Time Strings</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+          <Nav navbar className="indent">
             <NavItem>
-              <NavLink href="/home">Home</NavLink>
+              <NavLink href="/mandolins">Mandolins</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/guitars">Guitars</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/banjos">Banjos</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

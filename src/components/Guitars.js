@@ -39,7 +39,7 @@ let instruments = this.props.instruments.filter(instrument => instrument.family.
         </Card>       
       ) : null }
     </CardGroup>
-    <Button onClick={() => this.goBack()}>Back</Button>
+    <Button className="indent2" onClick={() => this.goBack()}>Back</Button>
     </>
     ) 
   }
