@@ -20,7 +20,7 @@ class Mandolins extends React.Component{
  
 
   render(){
-  let instruments = this.props.instruments.filter(instrument => instrument.family.name === "Mandolin")
+  let instruments = this.props.instruments.instruments.filter(instrument => instrument.family.name === "Mandolin")
 
   return(
     <>

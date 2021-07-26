@@ -10,6 +10,8 @@ import Instrument from './components/Instrument'
 import About from './components/About'
 import InstrumentForm from './components/InstrumentForm'
 import { fetchInstruments } from './actions/fetchInstruments'
+import { fetchMakers } from './actions/fetchMakers'
+
 import Navbar from './Navbar'
 
 
@@ -17,6 +19,7 @@ class App extends React.Component {
 
   componentDidMount(){
     this.props.fetchInstruments()
+    this.props.fetchMakers()
   }
 
   render(){
@@ -25,7 +28,7 @@ class App extends React.Component {
       <Navbar />
       <Switch>
       <Route exact path='/instruments/new' render={(routerProps) => 
-            <InstrumentForm {...routerProps} instruments={this.props.instruments} />}/>
+            <InstrumentForm {...routerProps} instruments={this.props.instruments} makers={this.props.makers}/>}/>
           <Route exact path='/about' render={(routerProps) => 
             <About {...routerProps} instruments={this.props.instruments} />}/>
           <Route exact path='/home' render={(routerProps) => 
@@ -45,9 +48,10 @@ class App extends React.Component {
 }
 const mapStateToProps = (state) =>{
   return {
-    instruments: state.instruments
+    instruments: state.instruments,
+    makers: state.makers
   }
 }
 
-export default connect(mapStateToProps, {fetchInstruments})(App)
+export default connect(mapStateToProps, {fetchInstruments, fetchMakers})(App)
 

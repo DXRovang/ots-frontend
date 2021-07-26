@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import instrumentReducer from './reducers/instrumentReducer'
+import makerReducer from './reducers/makerReducer'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(instrumentReducer, composeEnhancers(applyMiddleware(thunk)))
+
+const combinedReducer = combineReducers(
+  {instruments: instrumentReducer, makers: makerReducer}
+)
+let store = createStore(combinedReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>

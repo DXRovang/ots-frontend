@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createInstruments } from '../actions/createInstruments'
-import {
-  Card, Button, CardImg, CardTitle, CardText, CardGroup,
-  CardSubtitle, CardBody
-} from 'reactstrap';
+import { Button } from 'reactstrap';
+
+const families = ["Mandolin", "Guitar", "Banjo"]
+const guitarCategories = ["6-string Acoustic","12-string Acoustic","Electric","Hollow-body","Semi-Hollow","Resonator"]
+const mandolinCategories = ["F-style", "A-style", "Bowl-Back"]
+const banjoCategories = ["Plectrum", "Irish Tenor", "4-string Open-Back", "5-string Resonator", "5-string Open-Back"]
 
 class InstrumentForm extends React.Component{
 
@@ -34,22 +36,9 @@ class InstrumentForm extends React.Component{
     // debugger
     this.setState({
       [e.target.name]: e.target.value,
-      // family: e.target.value,
     })
 
   }
-  // handleCategoryChange = e =>{
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //     category: e.target.value,
-  //   })
-  // }
-  // handleMakerChange = e =>{
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //     maker: e.target.value,
-  //   })
-  // }
 
   handleSubmit = (e) =>{
     e.preventDefault() 
@@ -66,6 +55,7 @@ class InstrumentForm extends React.Component{
     this.props.createInstruments(formData)
     this.props.history.push('/home')
   }
+
   render() {
     // debugger
     return(
@@ -73,22 +63,18 @@ class InstrumentForm extends React.Component{
       <div className="formtitle form"> 
         <form onSubmit={e => this.handleSubmit(e)}>
           <select onChange={this.handleChange}  name="family" value={this.state.family}>
-            <option default>Select</option>
-            <option>Mandolin</option>
-            <option>Guitar</option>
-            <option>Banjo</option>
+          <option default>Select</option>  
+
+            {families.map(family => 
+              <option>{family}</option>)}
           </select>Family<br></br>
 
           {this.state.family === "Guitar" ? 
             <>
               <select onChange={this.handleChange}  name="category" value={this.state.category} >
                 <option default>Select</option>  
-                <option>6-string</option>
-                <option>12-string</option>
-                <option>Electric</option>
-                <option>Hollow-body</option>
-                <option>Semi-Hollow</option>
-                <option>Resonator</option>
+                {guitarCategories.map(guitar =>
+                  <option>{guitar}</option>)}
               </select>Category
             </>
           : null }
@@ -96,8 +82,8 @@ class InstrumentForm extends React.Component{
             <>
               <select onChange={this.handleChange}  name="category" value={this.state.category} >
                 <option default>Select</option>  
-                <option>F-style</option>
-                <option>A-style</option>
+                {mandolinCategories.map(mandolin =>
+                  <option>{mandolin}</option>)}
               </select>Category
             </>
           : null }
@@ -105,8 +91,8 @@ class InstrumentForm extends React.Component{
             <>
               <select onChange={this.handleChange}  name="category" value={this.state.category} >
                 <option default >Select</option>    
-                <option>4-string</option>
-                <option>5-string</option>
+                {banjoCategories.map(banjo =>
+                  <option>{banjo}</option>)}
               </select>Category
             </>
           : null }
@@ -117,45 +103,49 @@ class InstrumentForm extends React.Component{
             </label><br></br>
             <label>          
               <input type="number" name="year" onChange={this.handleChange} value={this.state.year}/>Year
-            </label><br></br>      
-            {this.state.family === "Mandolin" ? 
+            </label><br></br>    
+
+            <label> 
+              <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
+                <option default>Select</option>  
+                {this.props.makers.makers.map(maker=>
+                <option>{maker.name}</option>)}
+              </select> Maker
+            </label><br></br>
+
+            {/* {this.state.family === "Mandolin" ? 
               <>
                 <label> 
                   <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
                     <option default>Select</option>  
-                    <option>Weber</option>
-                    <option>Eastman</option>
-                    <option>Collings</option>
+                    {this.props.makers.makers.map(maker=>
+                      <option>{maker}</option>)}
                   </select> Maker
                 </label><br></br>
               </>
-            : null }  
-            {this.state.family === "Guitar" ? 
+            : null }   */}
+            {/* {this.state.family === "Guitar" ? 
               <>
                 <label> 
                   <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
                     <option default>Select</option>  
-                    <option>Fender</option>
-                    <option>Gibson</option>
-                    <option>Martin</option>
-                    <option>Taylor</option>
-                    <option>D'Angelico</option>
+                    {this.props.makers.makers.map(maker=>
+                      <option>{maker}</option>)}
                   </select> Maker
                 </label><br></br>
               </>
-            : null }
-            {this.state.family === "Banjo" ? 
+            : null } */}
+            {/* {this.state.family === "Banjo" ? 
               <>
                 <label> 
                   <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
                     <option default>Select</option>  
-                    <option>Deering</option>
-                    <option>Pisgah</option>
-                    <option>Homemade</option>
+                    {this.props.makers.makers.map(maker=>
+                      <option>{maker}</option>)}
                   </select> Maker
                 </label><br></br>
               </>
-            : null } 
+            : null }  */}
            
             {/* <label>          
               <input type="number" name="frets"/>Frets

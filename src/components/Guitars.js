@@ -18,7 +18,7 @@ class Guitars extends React.Component{
   }
 // debugger
 render(){
-let instruments = this.props.instruments.filter(instrument => instrument.family.name === "Guitar")
+let instruments = this.props.instruments.instruments.filter(instrument => instrument.family.name === "Guitar")
 
   return(
     <>

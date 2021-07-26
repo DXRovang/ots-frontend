@@ -6,7 +6,7 @@ import {
 
 const Instrument = props =>{
 
-  let instrument = props.instruments[props.match.params.id - 1]
+  let instrument = props.instruments.instruments[props.match.params.id - 1]
 
   function goBack(){
     props.history.goBack()
