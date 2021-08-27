@@ -112,40 +112,6 @@ class InstrumentForm extends React.Component{
                 <option>{maker.name}</option>)}
               </select> Maker
             </label><br></br>
-
-            {/* {this.state.family === "Mandolin" ? 
-              <>
-                <label> 
-                  <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
-                    <option default>Select</option>  
-                    {this.props.makers.makers.map(maker=>
-                      <option>{maker}</option>)}
-                  </select> Maker
-                </label><br></br>
-              </>
-            : null }   */}
-            {/* {this.state.family === "Guitar" ? 
-              <>
-                <label> 
-                  <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
-                    <option default>Select</option>  
-                    {this.props.makers.makers.map(maker=>
-                      <option>{maker}</option>)}
-                  </select> Maker
-                </label><br></br>
-              </>
-            : null } */}
-            {/* {this.state.family === "Banjo" ? 
-              <>
-                <label> 
-                  <select onChange={this.handleChange}  name="maker" value={this.state.maker} >
-                    <option default>Select</option>  
-                    {this.props.makers.makers.map(maker=>
-                      <option>{maker}</option>)}
-                  </select> Maker
-                </label><br></br>
-              </>
-            : null }  */}
            
             {/* <label>          
               <input type="number" name="frets"/>Frets

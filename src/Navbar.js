@@ -21,6 +21,9 @@ const Navig = (props) => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar className="indent">
             <NavItem>
+              <NavLink href="/login">Login</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="/mandolins">Mandolins</NavLink>
             </NavItem>
             <NavItem>
@@ -29,9 +32,9 @@ const Navig = (props) => {
             <NavItem>
               <NavLink href="/banjos">Banjos</NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="/about">About</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
             </NavItem>
