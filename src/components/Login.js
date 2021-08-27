@@ -1,22 +1,36 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { createSession } from '../actions/createSession'
 import {Link} from 'react-router-dom'
+import { Button } from 'reactstrap';
 
-import {
-  Card, Button, CardImg, CardTitle, CardText, CardGroup,
-  CardSubtitle, CardBody
-} from 'reactstrap';
+class Login extends React.Component{
 
-const Login = props =>{
-
-  function goBack(){
-    props.history.goBack()
+  goBack(){
+    this.props.history.goBack()
   }
 
-  return(
-    <>
-    <div className="text">Login Page.</div>
-    <Button onClick={() => goBack()}>Back</Button>
-    </>
-  )}
+  render(){
+    return(
+      <>
+        <div className="text">Login Page.</div>
+        <Button onClick={() => this.goBack()}>Back</Button>
+      </>
+    )
+  }
+}
+export default connect(null,{createSession})(Login)
+// const Login = props =>{
 
-export default Login
+//   function goBack(){
+//     props.history.goBack()
+//   }
+
+//   return(
+//     <>
+//     <div className="text">Login Page.</div>
+//     <Button onClick={() => goBack()}>Back</Button>
+//     </>
+//   )}
+
+// export default Login
