@@ -2,6 +2,7 @@ import instrumentReducer from './reducers/instrumentReducer'
 import makerReducer from './reducers/makerReducer'
 import userReducer from './reducers/userReducer'
 import currentUser from './reducers/ current_user'
+import loginForm from './reducers/loginForm'
 // import { sessionReducer, sessionService } from 'redux-react-session';
 // import { sessionReducer } from 'redux-react-session';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
@@ -13,7 +14,8 @@ const combinedReducer = combineReducers(
   {instruments: instrumentReducer, 
    makers: makerReducer,
    users: userReducer,
-   currentUser: currentUser
+   currentUser: currentUser,
+   loginForm: loginForm
   //  session: sessionReducer
   }
 )
