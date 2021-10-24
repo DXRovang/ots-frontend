@@ -5,7 +5,9 @@ export function fetchMakers(){
   .then(makers=> 
     dispatch({
     type: "FETCH_MAKERS", 
-    payload: makers.sort((a,b) => a.name.localeCompare(b.name))
+    payload: makers
+    // payload: makers.sort((a,b) => a.name.localeCompare(b.name))
+
   })
   )
 }

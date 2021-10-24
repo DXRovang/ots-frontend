@@ -13,6 +13,8 @@ import InstrumentForm from './components/InstrumentForm'
 import { fetchInstruments } from './actions/fetchInstruments'
 import { fetchMakers } from './actions/fetchMakers'
 import { fetchUsers } from './actions/fetchUsers'
+// import { connect } from 'react-redux'
+import { getCurrentUser } from './actions/currentUser.js'
 
 import Navbar from './Navbar'
 
@@ -20,9 +22,10 @@ import Navbar from './Navbar'
 class App extends React.Component {
 
   componentDidMount(){
+    this.props.getCurrentUser()
     this.props.fetchInstruments()
     this.props.fetchMakers()
-    this.props.fetchUsers()
+    // this.props.fetchUser()
   }
 
   render(){
@@ -58,5 +61,5 @@ const mapStateToProps = (state) =>{
   }
 }
 
-export default connect(mapStateToProps, {fetchInstruments, fetchMakers, fetchUsers})(App)
+export default connect(mapStateToProps, {getCurrentUser, fetchInstruments, fetchMakers, fetchUsers})(App)
 

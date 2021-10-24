@@ -19,7 +19,7 @@ const Login = ({loginFormData, updateLoginForm, login})=> {
     login(loginFormData)
   }
   return(
-    <form onSubmit={e => handleSubmit(e)}>
+    <form onSubmit={handleSubmit}>
       <label>           
         <input type="text" placeholder="username" name="username" onChange={handleChange} value={loginFormData.username}/>Username
       </label><br></br>
